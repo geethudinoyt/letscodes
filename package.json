@@ -1,0 +1,335 @@
+{
+  "name": "letscode",
+  "displayName": "Let's Code",
+  "description": "🚀 Privacy-focused P2P collaborative coding. Real-time editing, voice chat, task boards, shared terminals, code reviews — all encrypted, all P2P, zero servers.",
+  "version": "5.0.0",
+  "publisher": "ruthvikpedapondara",
+  "author": {
+    "name": "Ruthvik Pedapondara",
+    "email": "ruthvikpedapondara@example.com",
+    "url": "https://github.com/ruthvikpedapondara"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ruthvikpedapondara/letscode"
+  },
+  "homepage": "https://github.com/ruthvikpedapondara/letscode#readme",
+  "bugs": {
+    "url": "https://github.com/ruthvikpedapondara/letscode/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Education"
+  ],
+  "keywords": [
+    "collaboration",
+    "p2p",
+    "pair-programming",
+    "live-share",
+    "real-time",
+    "privacy",
+    "students",
+    "open-source",
+    "encrypted",
+    "copilot"
+  ],
+  "icon": "media/icon.png",
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "letscode.createSession",
+        "title": "Create Collaboration Session",
+        "category": "Let's Code",
+        "icon": "$(add)"
+      },
+      {
+        "command": "letscode.joinSession",
+        "title": "Join Collaboration Session",
+        "category": "Let's Code",
+        "icon": "$(plug)"
+      },
+      {
+        "command": "letscode.leaveSession",
+        "title": "Leave Session",
+        "category": "Let's Code",
+        "icon": "$(close)"
+      },
+      {
+        "command": "letscode.copySessionId",
+        "title": "Copy Session ID",
+        "category": "Let's Code",
+        "icon": "$(copy)"
+      },
+      {
+        "command": "letscode.toggleEditHistory",
+        "title": "Toggle Edit History",
+        "category": "Let's Code",
+        "icon": "$(history)"
+      },
+      {
+        "command": "letscode.sendChatMessage",
+        "title": "Send Chat Message",
+        "category": "Let's Code"
+      },
+      {
+        "command": "letscode.syncFiles",
+        "title": "Sync Project Files",
+        "category": "Let's Code",
+        "icon": "$(sync)"
+      },
+      {
+        "command": "letscode.setPassword",
+        "title": "Set Session Password",
+        "category": "Let's Code",
+        "icon": "$(lock)"
+      },
+      {
+        "command": "letscode.followPeer",
+        "title": "Follow Peer's Cursor",
+        "category": "Let's Code",
+        "icon": "$(eye)"
+      },
+      {
+        "command": "letscode.stopFollowing",
+        "title": "Stop Following",
+        "category": "Let's Code",
+        "icon": "$(eye-closed)"
+      },
+      {
+        "command": "letscode.openDashboard",
+        "title": "Open Activity Dashboard",
+        "category": "Let's Code",
+        "icon": "$(graph)"
+      },
+      {
+        "command": "letscode.openTaskBoard",
+        "title": "Open Task Board",
+        "category": "Let's Code",
+        "icon": "$(checklist)"
+      },
+      {
+        "command": "letscode.addReviewComment",
+        "title": "Add Code Review Comment",
+        "category": "Let's Code",
+        "icon": "$(comment)"
+      },
+      {
+        "command": "letscode.shareTerminal",
+        "title": "Share Terminal Output",
+        "category": "Let's Code",
+        "icon": "$(terminal)"
+      },
+      {
+        "command": "letscode.openWhiteboard",
+        "title": "Open Shared Whiteboard",
+        "category": "Let's Code",
+        "icon": "$(symbol-color)"
+      },
+      {
+        "command": "letscode.shareFile",
+        "title": "Share File with Peers",
+        "category": "Let's Code",
+        "icon": "$(file-symlink-file)"
+      },
+      {
+        "command": "letscode.toggleGitSync",
+        "title": "Toggle Git Status Sync",
+        "category": "Let's Code",
+        "icon": "$(git-branch)"
+      },
+      {
+        "command": "letscode.openWebDashboard",
+        "title": "Open Web Dashboard",
+        "category": "Let's Code",
+        "icon": "$(globe)"
+      },
+      {
+        "command": "letscode.saveSession",
+        "title": "Save Session State",
+        "category": "Let's Code",
+        "icon": "$(save)"
+      },
+      {
+        "command": "letscode.restoreSession",
+        "title": "Restore Previous Session",
+        "category": "Let's Code",
+        "icon": "$(debug-restart)"
+      },
+      {
+        "command": "letscode.toggleCopilotTracking",
+        "title": "Toggle Copilot Edit Tracking",
+        "category": "Let's Code",
+        "icon": "$(copilot)"
+      },
+      {
+        "command": "letscode.shareBreakpoints",
+        "title": "Share Breakpoints",
+        "category": "Let's Code",
+        "icon": "$(debug-breakpoint)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "letscode-sidebar",
+          "title": "Let's Code",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "letscode-sidebar": [
+        {
+          "type": "webview",
+          "id": "letscode.sidebarView",
+          "name": "Let's Code",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Let's Code",
+      "properties": {
+        "letscode.username": {
+          "type": "string",
+          "default": "",
+          "description": "Your display name in collaboration sessions"
+        },
+        "letscode.defaultPort": {
+          "type": "number",
+          "default": 42069,
+          "description": "Default port for hosting sessions"
+        },
+        "letscode.enableEncryption": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable AES-256-GCM encryption for all P2P traffic"
+        },
+        "letscode.showEditDecorations": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show inline decorations for edits by different users"
+        },
+        "letscode.autoSyncOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically sync files when saved"
+        },
+        "letscode.maxPeers": {
+          "type": "number",
+          "default": 10,
+          "description": "Maximum number of peers in a session"
+        },
+        "letscode.sessionPassword": {
+          "type": "string",
+          "default": "",
+          "description": "Default session password (leave empty for no password)"
+        },
+        "letscode.trackCopilotEdits": {
+          "type": "boolean",
+          "default": true,
+          "description": "Track and attribute edits from GitHub Copilot"
+        },
+        "letscode.autoSaveSession": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically save session state periodically"
+        },
+        "letscode.gitSyncEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Sync git branch and status info with peers"
+        },
+        "letscode.relayServerUrl": {
+          "type": "string",
+          "default": "",
+          "description": "URL of a relay server for cross-network connections (optional)"
+        },
+        "letscode.sharedTerminal": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically share terminal output with peers"
+        }
+      }
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "letscode.createSession",
+          "when": "view == letscode.sidebarView",
+          "group": "navigation"
+        },
+        {
+          "command": "letscode.joinSession",
+          "when": "view == letscode.sidebarView",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "letscode.addReviewComment",
+          "group": "letscode",
+          "when": "letscode.inSession"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "letscode.createSession",
+        "key": "ctrl+shift+l c",
+        "mac": "cmd+shift+l c"
+      },
+      {
+        "command": "letscode.joinSession",
+        "key": "ctrl+shift+l j",
+        "mac": "cmd+shift+l j"
+      },
+      {
+        "command": "letscode.leaveSession",
+        "key": "ctrl+shift+l l",
+        "mac": "cmd+shift+l l"
+      },
+      {
+        "command": "letscode.addReviewComment",
+        "key": "ctrl+shift+l r",
+        "mac": "cmd+shift+l r"
+      },
+      {
+        "command": "letscode.openTaskBoard",
+        "key": "ctrl+shift+l t",
+        "mac": "cmd+shift+l t"
+      },
+      {
+        "command": "letscode.openDashboard",
+        "key": "ctrl+shift+l d",
+        "mac": "cmd+shift+l d"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "node esbuild.js --production",
+    "watch": "node esbuild.js --watch",
+    "lint": "eslint src --ext ts",
+    "package": "npx -y @vscode/vsce package --allow-missing-repository"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@types/ws": "^8.5.10",
+    "esbuild": "^0.19.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "ws": "^8.16.0",
+    "yjs": "^13.6.0",
+    "y-protocols": "^1.0.6",
+    "lib0": "^0.2.88"
+  }
+}
