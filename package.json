@@ -37,7 +37,6 @@
     "encrypted",
     "copilot"
   ],
-  "icon": "media/icon.png",
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
@@ -172,6 +171,126 @@
         "title": "Share Breakpoints",
         "category": "Let's Code",
         "icon": "$(debug-breakpoint)"
+      },
+      {
+        "command": "letscode.sendGroupMessage",
+        "title": "Send Group Message",
+        "category": "Let's Code",
+        "icon": "$(comment-discussion)"
+      },
+      {
+        "command": "letscode.showChatHistory",
+        "title": "Show Chat History",
+        "category": "Let's Code",
+        "icon": "$(history)"
+      },
+      {
+        "command": "letscode.shareProjectStructure",
+        "title": "Share Project Structure",
+        "category": "Let's Code",
+        "icon": "$(folder)"
+      },
+      {
+        "command": "letscode.notifyFileChange",
+        "title": "Notify File Change",
+        "category": "Let's Code",
+        "icon": "$(file)"
+      },
+      {
+        "command": "letscode.showProjectUpdates",
+        "title": "Show Project Updates",
+        "category": "Let's Code",
+        "icon": "$(bell)"
+      },
+      {
+        "command": "letscode.shareMultipleFiles",
+        "title": "Share Multiple Files",
+        "category": "Let's Code",
+        "icon": "$(files)"
+      },
+      {
+        "command": "letscode.requestFileFromPeer",
+        "title": "Request File From Peer",
+        "category": "Let's Code",
+        "icon": "$(cloud-download)"
+      },
+      {
+        "command": "letscode.showSessionInfo",
+        "title": "Show Session Info",
+        "category": "Let's Code",
+        "icon": "$(info)"
+      },
+      {
+        "command": "letscode.copyConnectionDetails",
+        "title": "Copy Connection Details",
+        "category": "Let's Code",
+        "icon": "$(clippy)"
+      },
+      {
+        "command": "letscode.openChat",
+        "title": "Open Team Chat",
+        "category": "Let's Code",
+        "icon": "$(comment-discussion)"
+      },
+      {
+        "command": "letscode.toggleAutoSync",
+        "title": "Toggle Auto Sync",
+        "category": "Let's Code",
+        "icon": "$(sync)"
+      },
+      {
+        "command": "letscode.shareEntireProject",
+        "title": "Share Entire Project",
+        "category": "Let's Code",
+        "icon": "$(folder-opened)"
+      },
+      {
+        "command": "letscode.requestProjectSync",
+        "title": "Request Project Sync",
+        "category": "Let's Code",
+        "icon": "$(cloud-download)"
+      },
+      {
+        "command": "letscode.toggleTerminalBroadcast",
+        "title": "Toggle Terminal Broadcast Mode",
+        "category": "Let's Code",
+        "icon": "$(terminal)"
+      },
+      {
+        "command": "letscode.broadcastCommand",
+        "title": "Broadcast Command to All Peers",
+        "category": "Let's Code",
+        "icon": "$(run-all)"
+      },
+      {
+        "command": "letscode.createCommit",
+        "title": "Create Commit",
+        "category": "Let's Code",
+        "icon": "$(git-commit)"
+      },
+      {
+        "command": "letscode.showFileHistory",
+        "title": "Show File History",
+        "category": "Let's Code",
+        "icon": "$(history)"
+      },
+      {
+        "command": "letscode.showCommits",
+        "title": "Show Commits",
+        "category": "Let's Code",
+        "icon": "$(git-commit)"
+      },
+      {
+        "command": "letscode.showExtensionRecommendations",
+        "title": "Show Extension Recommendations",
+        "category": "Let's Code",
+        "icon": "$(extensions)"
+      },
+      {
+        "command": "letscode.recommendExtension",
+        "title": "Recommend Extension to Peers",
+        "category": "Let's Code",
+        "icon": "$(star)"
       }
     ],
     "viewsContainers": {
@@ -188,7 +307,7 @@
         {
           "type": "webview",
           "id": "letscode.sidebarView",
-          "name": "Let's Code",
+          "name": "Session",
           "icon": "media/icon.svg"
         }
       ]
